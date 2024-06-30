@@ -47,6 +47,8 @@ resource "digitalocean_domain" "root-domain" {
 
 # esto indica que para el "root-domain" theframework.es se debe crear un
 # subdominio digital de tipo A (address) que apunta a la ip del droplet
+# algo así: digital.theframework.es -> eaf-host-ubuntu-test-terraform
+# NOTA como este dominio no lo tengo aqui (digitalocean) lo hare manualmente.
 resource "digitalocean_record" "subdom-digital" {
   domain = "${digitalocean_domain.root-domain.name}"
   type   = "A"
