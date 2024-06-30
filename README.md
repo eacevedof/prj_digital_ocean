@@ -1,2 +1,3 @@
 # prj_digital_ocean
-scripts infra digital ocean
+- scripts infra digital ocean
+- https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs
