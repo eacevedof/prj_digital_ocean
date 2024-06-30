@@ -15,6 +15,7 @@ docker-build:
     # la sube a docker-hub
     - docker push "$CI_REGISTRY_IMAGE"
   variables:
+    # esto permite que el runner se conecte al demonio de docker de kubernetes
     DOCKER_HOST: tcp://localhost:2375
     DOCKER_TLS_CERTDIR: ""
 
@@ -22,5 +23,7 @@ deploy:
   stage: deploy
   image: bitnami/kubectl
   script:
+    # comprueba si el deploy hola-php existe sino lo crea a partir de la imagen anterior
     - kubectl get deployment hola-php || kubectl create deployment hola-php --image="$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA"
+    # si la imagen ya esta creada directamente viene a este paso y la actualiza
     - kubectl set image deployment/hola-php hola-php="$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA"
