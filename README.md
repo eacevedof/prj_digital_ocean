@@ -7,4 +7,11 @@
 
 ### terraform
 - brew install terraform
-- `terraform init`
+```sh
+# se configura main.tf
+terraform init
+# este comando generara assets ocultos .terraform y .terraform.lock.hcl
+
+
+terraform apply
+```
