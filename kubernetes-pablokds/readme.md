@@ -63,6 +63,7 @@ curl -X POST -H 'Content-Type: application/json' \
     - service token
   - Instalamos **helm tiller**
     - gitlab hara un deploy de un nuevo namespace
+  - instalamos **gitlab runner**
 
 ## kubectl
 - brew install kubectl (tarda como 1h)
