@@ -72,6 +72,10 @@ curl -X POST -H 'Content-Type: application/json' \
 - con el cluster levantado y kubectl instalado:
 ```sh
 kubectl --kubeconfig=./kubeconfig.yaml get nodes
+
+NAME                   STATUS   ROLES    AGE   VERSION
+pool-laj1gr40w-r57vb   Ready    <none>   36m   v1.30.1
+pool-laj1gr40w-r57vw   Ready    <none>   36m   v1.30.1
 ```
 - en la maquina local. Con el kubeconfig.yaml.
   - se ejecuta kubectl --kubeconfig=kubeconfig.yaml get ns
