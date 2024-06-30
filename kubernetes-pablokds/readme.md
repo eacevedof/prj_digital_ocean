@@ -64,5 +64,8 @@ curl -X POST -H 'Content-Type: application/json' \
   - Instalamos **helm tiller**
     - gitlab hara un deploy de un nuevo namespace
 
+- en la maquina local. Con el kubeconfig.yaml.
+  - se ejecuta kubectl --kubeconfig=kubeconfig.yaml get ns
+
 
 
