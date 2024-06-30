@@ -41,14 +41,15 @@ resource "digitalocean_droplet" "dl_test_terraform" {
 }
 
 # Creamos un dominio nuevo
-resource "digitalocean_domain" "my_subdomain" {
-  name = "digital.theframework.es"
+resource "digitalocean_domain" "root-domain" {
+  name = "theframework.es"
 }
 
-# Add a record to the domain
+# esto indica que para el "root-domain" theframework.es se debe crear un
+# subdominio digital de tipo A (address) que apunta a la ip del droplet
 resource "digitalocean_record" "subdom-digital" {
-  domain = "${digitalocean_domain.my_subdomain.name}"
+  domain = "${digitalocean_domain.root-domain.name}"
   type   = "A"
-  name   = "subdom-digital"
+  name   = "digital"
   value  = "${digitalocean_droplet.dl_test_terraform.ipv4_address}"
 }
