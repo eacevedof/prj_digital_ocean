@@ -1,6 +1,9 @@
 # prj_digital_ocean
 - scripts infra digital ocean
-- https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs
+- terraform init script
+  - https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs
+- terraform droplet creation script
+  - https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/resources/droplet
 
 ### terraform
 - brew install terraform
