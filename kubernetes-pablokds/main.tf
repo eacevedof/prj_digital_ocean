@@ -34,8 +34,21 @@ resource "digitalocean_droplet" "dl_test_terraform" {
   size      = "s-1vcpu-512mb-10gb"
   # este fichero es un ejecutor de contenedores que se ejecuta cuando el droplet este levantado
   # se llama tambien cloud-config
-  user_data = file("userdata.yaml")
+  user_data = file("user_data-docker-run.yaml")
   monitoring = true
   tags = ["eaf-host-ubuntu-test-terraform"]
   ssh_keys  = ["${digitalocean_ssh_key.test_terraform.fingerprint}"]
+}
+
+# Creamos un dominio nuevo
+resource "digitalocean_domain" "my_subdomain" {
+  name = "digital.theframework.es"
+}
+
+# Add a record to the domain
+resource "digitalocean_record" "subdom-digital" {
+  domain = "${digitalocean_domain.my_subdomain.name}"
+  type   = "A"
+  name   = "subdom-digital"
+  value  = "${digitalocean_droplet.dl_test_terraform.ipv4_address}"
 }
