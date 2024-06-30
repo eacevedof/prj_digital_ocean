@@ -70,5 +70,6 @@ curl -X POST -H 'Content-Type: application/json' \
 - en la maquina local. Con el kubeconfig.yaml.
   - se ejecuta kubectl --kubeconfig=kubeconfig.yaml get ns
 
-
+## app docker de prueba
+- streamings/prueba
 
