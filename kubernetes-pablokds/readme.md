@@ -7,6 +7,8 @@
 - Recursos "peladonerd"
   - https://github.com/pablokbs/peladonerd/blob/master/
 
+- Conectar gitlab con digital-ocean k8s
+  - https://www.youtube.com/watch?v=fwtxi_BRmt0
 
 
 ### terraform
