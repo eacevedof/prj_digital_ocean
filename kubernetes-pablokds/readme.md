@@ -15,6 +15,21 @@ terraform init
 
 # intenta conectarse a digital ocean y desplegar todo
 terraform apply
+
+# cuando este comando da error, hay que regenerar las ssh-keys en local
+# con: ssh-keygen -t rsa -C "xxx@yyy.zz" -f digocean-terraform    
+
+# el resultado deberia ser algo como:
+digitalocean_ssh_key.test_terraform: Creating...
+digitalocean_ssh_key.test_terraform: Creation complete after 0s [id=42610380]
+digitalocean_droplet.dl_test_terraform: Creating...
+digitalocean_droplet.dl_test_terraform: Still creating... [10s elapsed]
+digitalocean_droplet.dl_test_terraform: Still creating... [20s elapsed]
+digitalocean_droplet.dl_test_terraform: Still creating... [30s elapsed]
+digitalocean_droplet.dl_test_terraform: Still creating... [40s elapsed]
+digitalocean_droplet.dl_test_terraform: Creation complete after 42s [id=429262330]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 ```
 
 ### config nuevo droplet
