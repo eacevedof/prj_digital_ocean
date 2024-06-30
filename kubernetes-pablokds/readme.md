@@ -69,6 +69,10 @@ curl -X POST -H 'Content-Type: application/json' \
 
 ## kubectl
 - brew install kubectl (tarda como 1h)
+- con el cluster levantado y kubectl instalado:
+```sh
+kubectl --kubeconfig=./kubeconfig.yaml get nodes
+```
 - en la maquina local. Con el kubeconfig.yaml.
   - se ejecuta kubectl --kubeconfig=kubeconfig.yaml get ns
 
