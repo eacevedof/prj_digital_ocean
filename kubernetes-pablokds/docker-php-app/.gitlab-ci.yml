@@ -19,6 +19,7 @@ docker-build:
     DOCKER_HOST: tcp://localhost:2375
     DOCKER_TLS_CERTDIR: ""
 
+# ejecucion de kubernetes
 deploy:
   stage: deploy
   image: bitnami/kubectl
