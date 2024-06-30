@@ -72,13 +72,20 @@ curl -X POST -H 'Content-Type: application/json' \
 - con el cluster levantado y kubectl instalado:
 ```sh
 kubectl --kubeconfig=./kubeconfig.yaml get nodes
-
 # usando el cli de digital ocean
 # doctl kubernetes cluster kubeconfig save c61bcedd-a603-4633-8abb-3baf6b116257
 
 NAME                   STATUS   ROLES    AGE   VERSION
 pool-laj1gr40w-r57vb   Ready    <none>   36m   v1.30.1
 pool-laj1gr40w-r57vw   Ready    <none>   36m   v1.30.1
+
+kubectl --kubeconfig=./kubeconfig.yaml config get-contexts
+CURRENT   NAME                                         CLUSTER                                      AUTHINFO                                           NAMESPACE
+*         do-fra1-k8s-1-30-1-do-0-fra1-1719773664609   do-fra1-k8s-1-30-1-do-0-fra1-1719773664609   do-fra1-k8s-1-30-1-do-0-fra1-1719773664609-admin  
+
+kubectl --kubeconfig=./kubeconfig.yaml cluster-info
+Kubernetes control plane is running at https://c61bcedd-a603-4633-8abb-3baf6b116257.k8s.ondigitalocean.com
+CoreDNS is running at https://c61bcedd-a603-4633-8abb-3baf6b116257.k8s.ondigitalocean.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 ```
 - en la maquina local. Con el kubeconfig.yaml.
   - se ejecuta kubectl --kubeconfig=kubeconfig.yaml get ns
