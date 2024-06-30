@@ -1,4 +1,4 @@
-# This file is a template, and might need editing before it works on your project.
+# este archivo permite que cada desarrollo (proyecto de gitlab) tenga su propio pipeline
 docker-build:
   # Official docker image.
   image: docker:latest
