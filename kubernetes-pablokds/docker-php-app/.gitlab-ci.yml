@@ -6,9 +6,12 @@ docker-build:
   services:
     - docker:dind
   before_script:
+    # se conecta a docker-hub 
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
   script:
+    # construye la imagen de docker-php-app
     - docker build --pull -t "$CI_REGISTRY_IMAGE":"$CI_COMMIT_SHA" .
+    # la sube a docker-hub
     - docker push "$CI_REGISTRY_IMAGE"
   variables:
     DOCKER_HOST: tcp://localhost:2375
