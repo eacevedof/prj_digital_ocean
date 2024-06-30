@@ -1,3 +1,5 @@
 .vscode
 .idea
 .env
+.terraform
+.terraform.lock.hcl
