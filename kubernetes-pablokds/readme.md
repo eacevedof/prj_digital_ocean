@@ -1,5 +1,8 @@
 - Como crear droplet con terraform
   - https://www.youtube.com/watch?v=UqxebzWKigY
+  
+- Crear gitlab ci/cd con Kubernetes
+  - https://youtu.be/c5T0UkuD-6g
 
 - Recursos "peladonerd"
   - https://github.com/pablokbs/peladonerd/blob/master/
@@ -45,3 +48,21 @@ curl -X POST -H 'Content-Type: application/json' \
         "tags":["eaf-host-ubuntu-test-terraform"]}' \
     "https://api.digitalocean.com/v2/droplets"
 ```
+
+### to-do
+- el siguiente paso es crear un cluster en digital-ocean
+  - obtener el archivo **kubeconfig.yaml** (terraform)
+  - En ese archivo hay un nodo server: que tiene la url del cluster
+  - en el otro nodo certificate-authority-data hay un token en base64
+  - en la consola hacemos `echo "el base 64" 1 base64 -d`, este sera el CA Certificate
+  - Del nodo token nos quedamos con ese valor
+
+- volvemos a **gitlab**
+  - aqui configuraremos en: Add existing cluster
+    - la url y el ca anterior.
+    - service token
+  - Instalamos **helm tiller**
+    - gitlab hara un deploy de un nuevo namespace
+
+
+
