@@ -63,7 +63,7 @@ curl -X POST -H 'Content-Type: application/json' \
     - service token
   - Instalamos **helm tiller**
     - gitlab hara un deploy de un nuevo namespace
-  - instalamos **gitlab runner**
+  - instalamos **gitlab runner** como (github actions) es un deployer que hace que se ejecute el deploy en el cluster.
 
 ## kubectl
 - brew install kubectl (tarda como 1h)
